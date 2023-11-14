@@ -1,5 +1,5 @@
 const casual = require("casual");
-
+const usersCount = 10;
 module.exports = () => {
 	casual.define("user", function () {
 		return {
@@ -16,7 +16,7 @@ module.exports = () => {
 	});
 	const data = [];
 	// Create 100 users
-	for (let i = 0; i < 2; i++) {
+	for (let i = 0; i < usersCount; i++) {
 		data.push(casual.user);
 	}
 	return data;
