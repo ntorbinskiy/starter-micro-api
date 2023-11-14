@@ -6,7 +6,7 @@ http
 	.createServer(function (req, res) {
 		console.log(`Just got a request at ${req.url}!`);
 		const usersList = users();
-		console.log(usersList);
+
 		res.write(JSON.stringify(usersList));
 
 		res.end();
