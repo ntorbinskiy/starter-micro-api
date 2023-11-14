@@ -1,14 +1,19 @@
-const http = require("http");
+const express = require("express");
 
-const users = require("./users/index");
+const app = express();
+const PORT = 4000;
 
-http
-	.createServer(function (req, res) {
-		console.log(`Just got a request at ${req.url}!`);
-		const usersList = users();
+app.listen(PORT, () => {
+	console.log(`API listening on PORT ${PORT} `);
+});
 
-		res.write(JSON.stringify(usersList));
+app.get("/", (req, res) => {
+	res.send("Hey this is my API running 🥳");
+});
 
-		res.end();
-	})
-	.listen(process.env.PORT || 3000);
+app.get("/about", (req, res) => {
+	res.send("This is my about route..... ");
+});
+
+// Export the Express API
+module.exports = app;
