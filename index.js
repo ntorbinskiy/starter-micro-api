@@ -1,4 +1,5 @@
 const express = require("express");
+const users = require("./users");
 
 const app = express();
 const PORT = 4000;
@@ -8,7 +9,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-	res.send("Hey this is my API running 🥳");
+	res.send(JSON.stringify(users(), null, 4));
 });
 
 app.get("/about", (req, res) => {
