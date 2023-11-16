@@ -1,5 +1,5 @@
 const casual = require("casual");
-const usersCount = 10;
+const usersCount = 100;
 module.exports = () => {
 	casual.define("user", function () {
 		return {
